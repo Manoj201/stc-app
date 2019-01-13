@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@spotme-shared/*": ["app/shared/*"],
+        "@spotme-services/*": ["app/services/*"],
+        "@spotme-theme/*": ["app/theme"],
+        "@spotme-navigation/*": ["app/navigation"],
+        "@spotme-external-services/*": ["app/externalServices"],
+        "@spotme-storage/*": ["app/storage"],
+      }
+    },
+    "exclude": [
+      "node_modules"
+    ]
+  }

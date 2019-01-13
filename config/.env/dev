@@ -1,0 +1,4 @@
+ENV=development
+DEV=true
+API_BASE_URL=http://spotme.dev.calcey
+API_REST_PREFIX=api/v1.0
