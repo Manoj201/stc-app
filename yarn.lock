@@ -5195,6 +5195,11 @@ react-devtools-core@^3.2.2:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
+react-icomoon@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-icomoon/-/react-icomoon-1.0.0.tgz#76ae2e700470390486ede343cdc6aa51ea909619"
+  integrity sha512-bh2MEdRYI7wJDhDEz3oE4wonDDCHixpewsIspioFHwqSpMpU7NmVwAdftsROgmGjdHuLaE+IcvZay8hpBnKkXg==
+
 react-is@^16.3.2, react-is@^16.6.0:
   version "16.6.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.0.tgz#456645144581a6e99f6816ae2bd24ee94bdd0c01"

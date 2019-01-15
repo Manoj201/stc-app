@@ -5,3 +5,7 @@ import colors from './colors';
 export const container = {
   backgroundColor: colors.background.container,
 };
+
+export const DinFont = {
+  fontFamily: 'DINOT-CondBold',
+};

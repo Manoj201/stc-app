@@ -4,8 +4,7 @@ const white = '#ffffff';
 
 export default {
   background: {
-    container: '#F5FCFF',
-    white,
+    container: '#3399ff',
   },
 
   tabBar: {
@@ -14,6 +13,7 @@ export default {
 
   },
   divider: {
+
   },
   transparent: 'transparent',
 };
