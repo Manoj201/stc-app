@@ -1,5 +1,6 @@
-// import AnimatedTextInput from './animatedTextInput/AnimatedTextInput.component';
-//
-// export {
-//   AnimatedTextInput,
-// };
+import Icon from './icon/icon.component';
+
+export {
+  Icon,
+};
+
