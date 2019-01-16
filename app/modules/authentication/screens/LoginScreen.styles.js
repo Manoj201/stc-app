@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   containerWrapper: {
     flex: 1,
-    backgroundColor: '#3399ff',
+    backgroundColor: '#0099ff',
     flexDirection: 'column',
   },
   chestContainer: {
@@ -21,10 +21,9 @@ const styles = StyleSheet.create({
 
   inputFieldContainer: {
     flexDirection: 'row',
-    backgroundColor: 'white',
-    borderBottomColor: 'brown',
-    borderBottomWidth: 3,
-    marginHorizontal: 20,
+    borderBottomColor: '#802000',
+    borderBottomWidth: 2,
+    marginHorizontal: 25,
     justifyContent: 'center',
     alignItems: 'center',
   },
