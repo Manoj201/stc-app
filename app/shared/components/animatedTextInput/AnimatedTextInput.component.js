@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import {View, Text, TextInput, Animated, Platform} from 'react-native';
+import {View, TextInput, Animated, Platform} from 'react-native';
+import PropTypes from 'prop-types';
 
 
 import styles from './AnimatedTextInput.styles';
@@ -9,7 +10,7 @@ class AnimatedTextInput extends React.PureComponent<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: props.input ? props.input.value : '',
       isFocused: false,
     };
   }
@@ -29,18 +30,21 @@ class AnimatedTextInput extends React.PureComponent<any, any> {
     this.setState({
       value: newText,
     });
+    this.props.onChangeText(newText);
   };
 
-  handleIsFocused = () => {
+  handleIsFocused = (value: any) => {
     this.setState({
       isFocused: true,
     });
+    this.props.onFocus(value);
   };
 
   handleOnBlur = () => {
     this.setState({
       isFocused: false,
     });
+    this.props.onBlur();
   };
 
 
@@ -63,9 +67,12 @@ class AnimatedTextInput extends React.PureComponent<any, any> {
       }),
       fontFamily: 'DINOT-CondBold',
     };
+
+    const {label, secureTextEntry} = this.props;
+
     return (
       <View style={styles.container}>
-        <Animated.Text style={labelStyle}>Username</Animated.Text>
+        <Animated.Text style={labelStyle}>{label}</Animated.Text>
         <View style={styles.inputWrapper}>
           <TextInput
             autoCapitalize='none'
@@ -73,6 +80,7 @@ class AnimatedTextInput extends React.PureComponent<any, any> {
             onBlur={this.handleOnBlur}
             onChangeText={this.handleOnChangeText}
             onFocus={this.handleIsFocused}
+            secureTextEntry={secureTextEntry}
             style={styles.textInput}
             underlineColorAndroid='transparent'
             value={this.state.value}
@@ -82,5 +90,23 @@ class AnimatedTextInput extends React.PureComponent<any, any> {
     );
   }
 }
+
+AnimatedTextInput.propTypes = {
+  input: PropTypes.any,
+  label: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
+  onChangeText: PropTypes.func,
+  onFocus: PropTypes.func,
+  secureTextEntry: PropTypes.bool,
+
+};
+
+AnimatedTextInput.defaultProps = {
+  input: {},
+  secureTextEntry: false,
+  onBlur: () => {},
+  onChangeText: () => {},
+  onFocus: () => {},
+};
 
 export default AnimatedTextInput;

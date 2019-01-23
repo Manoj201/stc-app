@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import {View, Text, Image,  TouchableOpacity, TextInput} from 'react-native';
+import {View, Image} from 'react-native';
 
-import {AnimatedTextInput} from '../../../shared/components';
+import LoginDetailForm from '../forms/loginDetailForm/LoginDetailForm';
 
 import styles from './LoginScreen.styles';
 
@@ -18,15 +18,12 @@ class LoginScreen extends React.PureComponent<any, any> {
       <View style={styles.containerWrapper} >
         <View style={styles.chestContainer}>
           <Image
-            style={styles.chest}
             source={crest}
+            style={styles.chest}
           />
         </View>
         <View style={styles.inputContainer}>
-          <View style={{paddingHorizontal: 20, paddingVertical: 20}}>
-            <AnimatedTextInput />
-            <AnimatedTextInput />
-          </View>
+          <LoginDetailForm />
         </View>
       </View>
     );
