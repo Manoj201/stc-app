@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+    paddingVertical: 20,
   },
   inputContainer: {
     flex: 2,
@@ -18,7 +19,10 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
   },
-
+  textWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   inputFieldContainer: {
     flexDirection: 'row',
     borderBottomColor: '#802000',
@@ -27,6 +31,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  titleText: {
+    fontSize: 30,
+    color: '#802000',
+    fontFamily: 'DINOT-CondBold',
+  },
+  subTitleText: {
+    fontSize: 20,
+    color: '#802000',
+    fontFamily: 'DINOT-CondBold',
+  }
 });
 
 export default styles;

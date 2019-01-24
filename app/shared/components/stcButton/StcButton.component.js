@@ -10,9 +10,16 @@ class StcButton extends React.PureComponent<any, any> {
     super(props);
   }
 
+  handleOnPress = () => {
+    this.props.onPress();
+  };
+
   render() {
     return (
-      <TouchableOpacity style={{backgroundColor: '#ffffff00', alignItems: 'center', paddingVertical: 10, borderRadius: 5, borderWidth: 2, borderColor: 'brown'}}>
+      <TouchableOpacity
+        onPress={this.handleOnPress}
+        style={styles.container}
+      >
         <Text style={{fontSize: 18, color: 'brown'}}>SIGN IN</Text>
       </TouchableOpacity>
     );

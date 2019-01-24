@@ -1,17 +1,22 @@
 // @flow
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {Field, reduxForm} from 'redux-form';
 import type {Element as ReactElement} from 'react';
 
 import {AnimatedFormFieldComponent, StcButton} from '../../../../shared/components';
 
+import styles from './LoginDetailForm.styles';
 import {PASSWORD, USERNAME} from '../../../../shared/Strings';
 
 class LoginDetailForm extends React.PureComponent<any, any> {
   constructor(props) {
     super(props);
   }
+
+  handleOnPress = () => {
+    this.props.onHandleSubmit();
+  };
 
   renderAnimatedFormField = (input, label: string, additionalProps: Object): ReactElement<any> => {
     return (
@@ -41,7 +46,7 @@ class LoginDetailForm extends React.PureComponent<any, any> {
 
   renderLoginFormWrapper = (): ReactElement<any> => {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.formWrapper}>
         <Field
           component={this.renderUserNameField}
           name="username"
@@ -54,13 +59,12 @@ class LoginDetailForm extends React.PureComponent<any, any> {
     );
   };
 
-  renderBottomWrapper = (): ReactElement<any>  => {
+  renderBottomWrapper = (): ReactElement<any> => {
     return (
-      <View style={{paddingVertical: 15, paddingHorizontal: 10}}>
-        <StcButton />
-        <View>
-          <Text>CREATE PROFILE</Text>
-        </View>
+      <View style={styles.bottomWrapper}>
+        <StcButton
+          onPress={this.handleOnPress}
+        />
       </View>
     );
   };
@@ -69,8 +73,7 @@ class LoginDetailForm extends React.PureComponent<any, any> {
     const formWrapper = this.renderLoginFormWrapper();
     const bottomWrapper = this.renderBottomWrapper();
     return (
-      <View style={{ flex: 1, flexDirection: 'column',
-        justifyContent: 'space-between'}}>
+      <View style={styles.formContainer}>
         {formWrapper}
         {bottomWrapper}
       </View>

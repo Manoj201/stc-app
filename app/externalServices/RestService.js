@@ -2,7 +2,7 @@
 import Config from 'react-native-config';
 
 // import {sessionActions} from '../storage/realm';
-import {isConnected} from '../services/ConnectivityService';
+import {isConnected} from '../servicess/ConnectivityService';
 
 /**
  * API Base URL
@@ -134,7 +134,6 @@ export const POST = async (
     body: JSON.stringify(body || {}),
   };
   const response = await fetch(url, options);
-
   // Handle the response before returning
   return handleResponseStatus(response);
 };
