@@ -23,3 +23,5 @@
 7. For action types always define them in a types.js and reuse them. And follow naming convention
 	- `<Request_type>_<Entity>_BY_<Params>`
 	Eg:- GET_ACCOUNT_BY_ID
+
+	 adb reverse tcp:9090 tcp:9090

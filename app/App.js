@@ -8,7 +8,7 @@ import configureStore from './store/ConfigureStore';
 
 import styles from './App.styles';
 
-import AuthenticationNavigationComponent from './navigations/authenticationNavigator';
+import RootScreen from './modules/authentication/screens/Root.Screen';
 
 
 let reactotronStoreAction = null;
@@ -22,7 +22,7 @@ const store = configureStore(reactotronStoreAction);
 const App = () => (
   <Provider store={store}>
     <SafeAreaView style={styles.container}>
-      <AuthenticationNavigationComponent />
+      <RootScreen />
     </SafeAreaView>
   </Provider>
 );

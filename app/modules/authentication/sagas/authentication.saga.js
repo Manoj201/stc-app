@@ -10,6 +10,7 @@ import type {
 
 import Actions from '../actions/authentication.actions';
 import AuthenticationService from '../../../externalServices/Authentication.service';
+import AsyncStorageService from '../../../servicess/AsyncStorageService';
 import {
   GET_LOGIN_VERIFICATION,
 } from '../actions/Types';
@@ -22,7 +23,7 @@ export default () => {
         action.payload.username,
         action.payload.password,
       );
-      console.log(response);
+      yield AsyncStorageService.storeAsyncData('token', response.token);
       yield put(Actions.getLoginVerificationSuccess(response));
     } catch (error) {
       yield put(Actions.getLoginVerificationFailure(error));

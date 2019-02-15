@@ -20,6 +20,7 @@ export const getLoginVerification = (state = INITIAL_STATE, {payload}: any) => (
 
 export const getLoginVerificationSuccess = (state = INITIAL_STATE, {payload}: any) => ({
   ...state,
+  loginData: payload.data,
   loginIsLoading: false,
 });
 

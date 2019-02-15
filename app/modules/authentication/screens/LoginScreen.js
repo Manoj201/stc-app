@@ -15,9 +15,19 @@ const crest = require('../../../theme/crest.png');
 class LoginScreen extends React.PureComponent<any, any> {
   constructor(props) {
     super(props);
+    this.state = {
+      token: null,
+      isLoading: false,
+    };
   }
 
   componentWillReceiveProps(newProps) {
+    this.setState(
+      (prevState) => ({
+        token: newProps.token,
+        isLoading: newProps.isLoading,
+      })
+    );
   }
 
   handleLogin = () => {
@@ -59,6 +69,8 @@ LoginScreen.defaultProps = {
 const mapStateToProps = (state, ownProps) => {
   return {
     loginDetailForm: state.form.loginDetail,
+    loginData: state.authentication.loginData,
+    isLoading: state.authentication.loginIsLoading,
   };
 };
 
