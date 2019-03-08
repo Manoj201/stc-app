@@ -6,7 +6,7 @@ import type {Saga} from 'redux-saga';
 import Actions from '../actions/HomeActions';
 
 import {
-  GET_USER_BY_ID,
+  GET_USER_BY_ID, GET_USER_FEED,
 } from '../actions/Types';
 
 export default () => {
@@ -22,11 +22,25 @@ export default () => {
     }
   }
 
+  function* getUserFeed({payload}) {
+    try {
+      const response = yield call();
+      yield put
+    } catch (error) {
+      yield put(Actions.getUserFeedFailure(error));
+    }
+  }
+
   function* watchGetUserById(): Saga<void> {
     yield takeLatest(GET_USER_BY_ID, getUserById);
   }
 
+  function* watchGetUserFeed(): Saga<void> {
+    yield takeLatest(GET_USER_FEED, getUserFeed);
+  }
+
   return {
     watchGetUserById,
+    watchGetUserFeed,
   };
 };

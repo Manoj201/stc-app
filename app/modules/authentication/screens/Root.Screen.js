@@ -4,9 +4,10 @@ import {View, Image, Text, SafeAreaView} from 'react-native';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import AuthenticationNavigationComponent from '../../../navigations/authenticationNavigator';
-import PrimaryTabNavigationComponent from '../../../navigations/primaryTabNavigator';
+import PrimaryStackNavigationComponent from '../../../navigations/primaryStackNavigator';
 
 import AsyncStorageService from '../../../servicess/AsyncStorageService';
+
 
 class RootScreen extends React.PureComponent<any, any> {
   constructor(props) {
@@ -35,7 +36,7 @@ class RootScreen extends React.PureComponent<any, any> {
 
   render() {
     return (
-      this.state.token==null ? <AuthenticationNavigationComponent /> : <PrimaryTabNavigationComponent />
+      this.state.token==null ? <AuthenticationNavigationComponent /> : <PrimaryStackNavigationComponent />
     );
   }
 }

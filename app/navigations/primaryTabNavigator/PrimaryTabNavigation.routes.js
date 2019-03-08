@@ -1,18 +1,18 @@
 // @flow
 import React from 'react';
 
-import TabOne from './TabOne';
+import HomeScreen from '../../modules/home/screens/HomeScreen';
 import TabTwo from './TabTwo';
 import TabThree from './TabThree';
 import Icon from '../../shared/components/icon/icon.component';
 
-export const TAB_NAV_HOME = 'TabOne';
+export const TAB_NAV_HOME = 'HomeScreen';
 export const TAB_NAV_CHILD = 'TabTwo';
 export const TAB_NAV_THREE = 'TabThree';
 
 export const TAB_ROUTES = {
   [TAB_NAV_HOME]: {
-    screen: TabOne,
+    screen: HomeScreen,
     path: `/${TAB_NAV_HOME}`,
     navigationOptions: {
       tabBarIcon: ({tintColor}) => renderTabIcon(tintColor, 'home'),
@@ -36,7 +36,11 @@ export const TAB_ROUTES = {
 
 const renderTabIcon = (tintColor, name) => {
   return (
-    <Icon color={tintColor} name={name} size={25} />
+    <Icon
+      color={tintColor}
+      name={name}
+      size={25}
+    />
   );
 };
 
