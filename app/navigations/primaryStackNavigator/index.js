@@ -2,11 +2,11 @@
 import React from 'react';
 import {createStackNavigator, NavigationContainer} from 'react-navigation';
 
-import {ROOT_ROUTES, ROOT_NAV_HOME} from './PrimaryStackNavigation.routes';
+import {ROOT_ROUTES, ROOT_NAV_HOME_TAB} from './PrimaryStackNavigation.routes';
 import PrimaryStackNavigationService from './PrimaryStackNavigation.service';
 
 const NAV_CONFIG = {
-  initialRouteName: ROOT_NAV_HOME,
+  initialRouteName: ROOT_NAV_HOME_TAB,
   headerMode: 'none',
   navigationOptions: {
     gesturesEnabled: false,
